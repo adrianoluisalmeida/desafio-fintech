@@ -1,11 +1,16 @@
-import { Body, Controller, Post } from '@nestjs/common';
-import { CreateAccountRequest } from './requests/create-account.request';
+import { Body, Controller, Inject, Post } from '@nestjs/common';
+import { CreateAccountService } from 'src/domain/services/createAccountService';
+import { CreateAccountRequest } from './requests/createAccountRequest';
 
 @Controller('account')
 export class AccountController {
+  constructor(
+    @Inject('ICreateAccountService')
+    private readonly createAcountService: CreateAccountService,
+  ) {}
+
   @Post()
   create(@Body() createAccountRequest: CreateAccountRequest): Promise<any> {
-    console.log(createAccountRequest);
-    return Promise.resolve(null);
+    return this.createAcountService.execute(createAccountRequest);
   }
 }
