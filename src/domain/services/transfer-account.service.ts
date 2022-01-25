@@ -4,8 +4,8 @@ import {
   NotFoundException,
   UnprocessableEntityException,
 } from '@nestjs/common';
-import { AccountRepository } from 'src/infra/repositories/account.repository';
-import { TransferAccountRequest } from 'src/presentation/account/requests/transfer-account.request';
+import { AccountRepository } from '../../infra/repositories/account.repository';
+import { TransferAccountRequest } from '../../presentation/account/requests/transfer-account.request';
 import { AddMovementService } from './add-movement.service';
 import { BalanceMovementService } from './balance-movement.service';
 import { RemoveMovementService } from './remove-movement.service';
