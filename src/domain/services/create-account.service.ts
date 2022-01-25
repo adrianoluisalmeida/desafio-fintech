@@ -4,8 +4,8 @@ import {
   UnprocessableEntityException,
 } from '@nestjs/common';
 import { validate } from 'class-validator';
-import { AccountRepository } from 'src/infra/repositories/account.repository';
-import { CreateAccountRequest } from 'src/presentation/account/requests/create-account.request';
+import { AccountRepository } from '../../infra/repositories/account.repository';
+import { CreateAccountRequest } from '../../presentation/account/requests/create-account.request';
 
 @Injectable()
 export class CreateAccountService {
