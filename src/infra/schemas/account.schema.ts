@@ -1,6 +1,6 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
-import { AccountInterface } from 'src/domain/entities/IAccount';
+import { AccountInterface } from 'src/domain/entities/account.interface';
 
 @Schema()
 export class Account implements AccountInterface {
