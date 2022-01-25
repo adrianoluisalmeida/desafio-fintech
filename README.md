@@ -49,8 +49,8 @@ Current test coverage
 <img src="coverage.png" alt="coverage" />
 
 ## Endpoints API
-<a href="endpoints.json" download>Click to Download - INSOMNIA</a>    
-<a href="desafio-fintech-backend.postman_collection.json" download>Click to Download - POSTMAN</a>
+<a href="endpoints.json" target="_blank" download>Click to Download - INSOMNIA</a>    
+<a href="desafio-fintech-backend.postman_collection.json" target="_blank" download>Click to Download - POSTMAN</a>
 
 **Movement**   
 POST *{{ base_url }}/movement/remove*   
@@ -63,6 +63,9 @@ POST *{{ base_url }}/account/:account-id/transfer*
 
 ## Documentação - swagger   
 Link -> http://localhost:3000/swagger/  
+
+## Link do trello com atividades
+<a href="https://trello.com/b/crbTWbTs/desafio-fintech-backend" target="_blank" download>Link trello</a>    
 
 ## Support
 
