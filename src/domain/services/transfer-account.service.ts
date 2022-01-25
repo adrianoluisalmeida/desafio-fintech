@@ -49,12 +49,7 @@ export class TransferAccountService {
         'Destination account does not exist',
       );
 
-    let balanceAccount = null;
-    try {
-      balanceAccount = await this.balanceMovementService.execute(accountId);
-    } catch (error) {
-      throw new NotFoundException(error);
-    }
+    const balanceAccount = await this.balanceMovementService.execute(accountId);
 
     if (balanceAccount < value) {
       throw new UnprocessableEntityException(

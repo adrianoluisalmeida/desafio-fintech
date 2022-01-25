@@ -7,6 +7,7 @@ import { validate } from 'class-validator';
 import { AccountRepository } from 'src/infra/repositories/account.repository';
 import { MovementRepository } from 'src/infra/repositories/movement.repository';
 import { AddMovementRequest } from 'src/presentation/movement/requests/add-movement.request';
+import { BalanceMovementService } from './balance-movement.service';
 
 @Injectable()
 export class RemoveMovementService {
@@ -16,6 +17,9 @@ export class RemoveMovementService {
 
     @Inject('AccountRepositoryInterface')
     private readonly accountRepository: AccountRepository,
+
+    @Inject('BalanceMovementServiceInterface')
+    private readonly balanceMovementService: BalanceMovementService,
   ) {}
 
   async execute(movementRequest: AddMovementRequest): Promise<any> {
@@ -33,6 +37,14 @@ export class RemoveMovementService {
 
     if (!accountExists)
       throw new UnprocessableEntityException('account does not exist');
+
+    const balanceAccount = await this.balanceMovementService.execute(accountId);
+
+    if (balanceAccount - value < 0) {
+      throw new UnprocessableEntityException(
+        'Insufficient funds for the transaction',
+      );
+    }
 
     return await this.movementRepository.create(movement);
   }
