@@ -3,8 +3,8 @@ import {
   Injectable,
   UnprocessableEntityException,
 } from '@nestjs/common';
-import { AccountRepository } from 'src/infra/repositories/account.repository';
-import { MovementRepository } from 'src/infra/repositories/movement.repository';
+import { AccountRepository } from '../../infra/repositories/account.repository';
+import { MovementRepository } from '../../infra/repositories/movement.repository';
 
 @Injectable()
 export class BalanceMovementService {
