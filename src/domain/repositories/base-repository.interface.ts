@@ -1,5 +1,5 @@
 import { Document } from 'mongoose';
 
-export interface IBaseRepository<TDocument extends Document> {
+export interface BaseRepositoryInterfacec<TDocument extends Document> {
   create<T>(data: T): Promise<TDocument>;
 }

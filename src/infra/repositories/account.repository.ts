@@ -1,14 +1,14 @@
 import { Model } from 'mongoose';
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { IAccountRepository } from 'src/domain/repositories/IAccountRepository';
-import { BaseRepository } from './baseRepository';
+import { BaseRepository } from './base.repository';
 import { Account, AccountDocument } from '../schemas/account.schema';
+import { AccountRepositoryInterface } from 'src/domain/repositories/account-repository.interface';
 
 @Injectable()
 export class AccountRepository
   extends BaseRepository<AccountDocument>
-  implements IAccountRepository
+  implements AccountRepositoryInterface
 {
   constructor(
     @InjectModel(Account.name) private accountModel: Model<AccountDocument>,

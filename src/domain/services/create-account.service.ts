@@ -4,13 +4,13 @@ import {
   UnprocessableEntityException,
 } from '@nestjs/common';
 import { validate } from 'class-validator';
-import { AccountRepository } from 'src/infra/repositories/accountRepository';
-import { CreateAccountRequest } from 'src/presentation/account/requests/createAccountRequest';
+import { AccountRepository } from 'src/infra/repositories/account.repository';
+import { CreateAccountRequest } from 'src/presentation/account/requests/create-account.request';
 
 @Injectable()
 export class CreateAccountService {
   constructor(
-    @Inject('IAccountRepository')
+    @Inject('AccountRepositoryInterface')
     private readonly accountRepository: AccountRepository,
   ) {}
 

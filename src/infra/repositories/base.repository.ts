@@ -1,8 +1,8 @@
 import { Document, Model } from 'mongoose';
-import { IBaseRepository } from 'src/domain/repositories/IBaseRepository';
+import { BaseRepositoryInterfacec } from 'src/domain/repositories/base-repository.interface';
 
 export abstract class BaseRepository<TDocument extends Document>
-  implements IBaseRepository<TDocument>
+  implements BaseRepositoryInterfacec<TDocument>
 {
   constructor(private readonly model: Model<TDocument>) {}
 

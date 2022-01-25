@@ -1,9 +1,9 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
-import { IAccount } from 'src/domain/entities/IAccount';
+import { AccountInterface } from 'src/domain/entities/IAccount';
 
 @Schema()
-export class Account implements IAccount {
+export class Account implements AccountInterface {
   @Prop({ required: true })
   cpf: string;
 

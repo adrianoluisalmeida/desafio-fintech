@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
-import { CreateAccountService } from 'src/domain/services/createAccountService';
-import { AccountRepository } from 'src/infra/repositories/accountRepository';
+import { CreateAccountService } from 'src/domain/services/create-account.service';
+import { AccountRepository } from 'src/infra/repositories/account.repository';
 import { Account, AccountSchema } from 'src/infra/schemas/account.schema';
 import { AccountController } from './account.controller';
 
@@ -17,11 +17,11 @@ import { AccountController } from './account.controller';
   controllers: [AccountController],
   providers: [
     {
-      provide: 'ICreateAccountService',
+      provide: 'CreateAccountServiceInterface',
       useClass: CreateAccountService,
     },
     {
-      provide: 'IAccountRepository',
+      provide: 'AccountRepositoryInterface',
       useClass: AccountRepository,
     },
   ],

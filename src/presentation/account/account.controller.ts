@@ -1,11 +1,11 @@
 import { Body, Controller, Inject, Post } from '@nestjs/common';
-import { CreateAccountService } from 'src/domain/services/createAccountService';
-import { CreateAccountRequest } from './requests/createAccountRequest';
+import { CreateAccountService } from 'src/domain/services/create-account.service';
+import { CreateAccountRequest } from './requests/create-account.request';
 
 @Controller('account')
 export class AccountController {
   constructor(
-    @Inject('ICreateAccountService')
+    @Inject('CreateAccountServiceInterface')
     private readonly createAcountService: CreateAccountService,
   ) {}
 
