@@ -4,9 +4,9 @@ import {
   UnprocessableEntityException,
 } from '@nestjs/common';
 import { validate } from 'class-validator';
-import { AccountRepository } from 'src/infra/repositories/account.repository';
-import { MovementRepository } from 'src/infra/repositories/movement.repository';
-import { AddMovementRequest } from 'src/presentation/movement/requests/add-movement.request';
+import { AccountRepository } from '../../infra/repositories/account.repository';
+import { MovementRepository } from '../../infra/repositories/movement.repository';
+import { AddMovementRequest } from '../../presentation/movement/requests/add-movement.request';
 import { BalanceMovementService } from './balance-movement.service';
 
 @Injectable()
