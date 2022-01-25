@@ -50,6 +50,7 @@ Current test coverage
 
 ## Endpoints API
 <a href="endpoints.json" download>Click to Download - INSOMNIA</a>
+<a href="desafio-fintech-backend.postman_collection.json" download>Click to Download - POSTMAN</a>
 
 **Movement**   
 POST *{{ base_url }}/movement/remove*   
