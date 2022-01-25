@@ -14,4 +14,20 @@ export class MovementRepository implements MovementRepositoryInterface {
   async create(movement: AddMovementRequest): Promise<Movement> {
     return this.movementModel.create(movement);
   }
+
+  async balanceByAccountId(accountId: string): Promise<number> {
+    const amountResult = await this.movementModel
+      .aggregate([
+        { $match: { accountId } },
+        {
+          $group: {
+            _id: null,
+            balance: { $sum: '$value' },
+          },
+        },
+      ])
+      .exec();
+
+    return amountResult[0]?.balance || 0;
+  }
 }

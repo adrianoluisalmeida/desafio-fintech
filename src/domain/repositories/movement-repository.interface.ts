@@ -3,4 +3,5 @@ import { MovementInterface } from '../entities/movement.interface';
 
 export interface MovementRepositoryInterface {
   create(movement: AddMovementRequest): Promise<MovementInterface>;
+  balanceByAccountId(accountId: string): Promise<number>;
 }

@@ -16,6 +16,7 @@ export class AccountRepository implements AccountRepositoryInterface {
   }
 
   async getById(id: string): Promise<Account> {
+    console.log(id);
     return this.accountModel.findById(id).exec();
   }
 
